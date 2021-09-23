@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from "next/link";
 import { CaretDownOutlined, CaretUpOutlined, MenuOutlined } from '@ant-design/icons';
 import { Menu, Dropdown } from 'antd';
-import styles from './navbar.module.css'
+import styles from '../../styles/navbar.module.css'
 
 const Navbar = () => {
     const router = useRouter()
@@ -14,11 +14,11 @@ const Navbar = () => {
 
     const menu = (
         <Menu className={styles.dropdown}>
-            {links.map((item ,index) => {
+            {links.map((item, index) => {
                 return (<>
-                    <Menu.Item style={{ padding: '15px 0px' }} key ={index.toString()}>
+                    <Menu.Item style={{ padding: '15px 0px' }} key={index.toString()}>
                         <Link href="/" >
-                            <li  key ={index.toString()} className=" font-medium space-x-2  rounded-full  " style={{ fontSize: '1.2rem' }}>  {item} </li>
+                            <li key={index.toString()} className=" font-medium space-x-2  rounded-full  " style={{ fontSize: '1.2rem' }}>  {item} </li>
                         </Link>
                     </Menu.Item>
                 </>)
@@ -28,11 +28,11 @@ const Navbar = () => {
 
     const resource = (
         <Menu className={styles.dropdown}>
-            {links.map((item,index) => {
+            {links.map((item, index) => {
                 return (<>
-                    <Menu.Item style={{ padding: '15px 0px' }} key ={index.toString()}>
+                    <Menu.Item style={{ padding: '15px 0px' }} key={index.toString()}>
                         <Link href="/" >
-                            <li key ={index.toString()} className=" font-medium space-x-2  rounded-full  " style={{ fontSize: '1.2rem' }}>  {item} </li>
+                            <li key={index.toString()} className=" font-medium space-x-2  rounded-full  " style={{ fontSize: '1.2rem' }}>  {item} </li>
                         </Link>
                     </Menu.Item>
                 </>)
@@ -94,7 +94,7 @@ const Navbar = () => {
                             height={50}
                         />
                     </Link>
-                    
+
                     <div className="text-2xl" onClick={() => {
                         if (document.getElementById('navbar').offsetHeight > 578) {
                             document.getElementById('navbar').style.height = '10vh'
