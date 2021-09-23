@@ -1,0 +1,43 @@
+.nav{
+    height: 10vh;
+    width: 100vw;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 10px 1px #c3c7c791;
+    position: fixed;
+    top: 0px;
+    padding: 0px 8rem;
+}
+
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown{
+    border-radius: 10px;
+    width: 15rem;
+    text-align: center;
+}
+.menubtn{
+    visibility: hidden;
+}
+
+@media (max-width: 780px) {
+  .nav{
+   height: 8vh; 
+   padding: 0px 1rem;
+  }
+  .main{
+   visibility: hidden;
+   height: 0px;
+   width: 0px;
+}
+  .menubtn{
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    visibility: visible;
+}
+}
