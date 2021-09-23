@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Head from 'next/head'
 import Navbar from "../Components/Navbar/index";
 import Fotter from "../Components/Fotter/index";
-import { Form, Input, Button, Checkbox, Select } from 'antd';
+import { Form, Input, Select } from 'antd';
 import { dials } from "../utils/dial.js";
 import styles from '../styles/Home.module.css'
 
@@ -26,24 +26,21 @@ export default function Home() {
   }
 
   const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
+    console.log("Failed", errorInfo);
   };
 
-// qwertyuiop
   const select = (
     <Select
       showSearch
       showArrow={false}
-      className=""
       style={{ width: 120 }}
       placeholder='Select'
       defaultValue={<p className="text-black font-semibold"> {dialCode.country} </p>}
       optionFilterProp="children"
       onChange={(v, o) => {
-        console.log("value : ", v, " : ", o)
         setDialCode({ 'dialCode': v, 'country': o.children.props.children })
       }}
-     >
+    >
       {dials.map((items, index) => {
         return (
           <Option value={items.dial_code} key={index} label={items.code} className="text-black">
@@ -89,7 +86,7 @@ export default function Home() {
                 onFinish={onFinish}
                 onFinishFailed={onFinishFailed}
                 onValuesChange={(val, all_Val) => {
-                  all_Val.Phone == '' ?? setDialCode({ 'dialCode': '','country': '' })
+                  all_Val.Phone == '' ?? setDialCode({ 'dialCode': '', 'country': '' })
                   console.log("qwerty : ", all_Val)
                 }}
                 autoComplete="off"
@@ -120,23 +117,25 @@ export default function Home() {
                   <Input placeholder="Enter your email address" bordered={false} className={styles.input} />
                 </Form.Item>
 
-                <button className="bg-indigo-600  px-8 py-3 mb-4 font-base text-white inline-flex items-center space-x-2 rounded-xl text-lg ">
+                <button className="bg-indigo-600  px-8 py-3 mb-4 font-base text-white inline-flex items-center space-x-2 rounded-xl text-lg">
                   <span>Get Started With Protonn Today</span>
                 </button>
                 <p className=" text-gray-500 font-base">
-                  By clicking "Send Link" you agree to ourTerms of
+                  By clicking Send Link you agree to ourTerms of
                   <br />
-                  <span className=" text-indigo-500"> Service and Privacy</span> Policy
+                  <span className=" text-indigo-500"> Service and Privacy</span>
+                  Policy
                 </p>
               </Form>
             </div>
           </div>
           <div className="lg:w-1/2 mb-10 lg:mb-0 rounded-lg overflow-hidden w-full text-center ">
-            <img alt="feature" className={`object-cover object-center lg:h-6/6  w-full ${styles.secfirstimg}`} src="https://www.protonn.com/_websiteAssets/img/home/main_image_v2.png" />
+            <img alt="feature" className={`object-cover object-center lg:h-6/6  w-full ${styles.secfirstimg}`}
+              src="https://www.protonn.com/_websiteAssets/img/home/main_image_v2.png" />
           </div>
         </div>
       </section>
-      <Fotter className="" />
+      <Fotter />
     </>
   )
 }
