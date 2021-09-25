@@ -1,0 +1,22 @@
+#heading{
+    line-height:4.5rem;
+}
+#mainDiv{
+    height:70vh;
+}
+.Video{
+    height:100%;
+}
+.horizontal{
+    visibilty:hidden;
+}
+
+@media (max-width: 780px) {
+  .horizontal{
+    display:visible;
+    background-color:black;  
+}  
+  #heading{
+    line-height: 3rem;
+ }
+}

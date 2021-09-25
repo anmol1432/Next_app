@@ -31,9 +31,17 @@
   height: 90vh;
 }
 
+.vedioSection{
+  border-radius:2.5rem !important;
+}
+
 @media (max-width: 780px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
+  .vedioSection{
+  height: 30vh;
+  border-radius:0px !important;
+  padding: 0px 2rem;
+}
+  .secfirstimg{
+  height: 50vh;
+}
 }
