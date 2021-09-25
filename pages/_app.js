@@ -1,4 +1,3 @@
-import 'tailwindcss/tailwind.css'
 import 'antd/dist/antd.css'
 import '../styles/globals.css'
 import '../styles/Home.module.css'
