@@ -17,31 +17,6 @@ export default function Home() {
   })
 
   useEffect(() => {
-    Array.from(
-      document.querySelectorAll('head > link[rel="stylesheet"][data-n-p]')
-    ).forEach(node => {
-      node.removeAttribute('data-n-p');
-    });
-    const mutationHandler = mutations => {
-      mutations.forEach(({ target }) => {
-        if (target.nodeName === 'STYLE') {
-          if (target.getAttribute('media') === 'x') {
-            target.removeAttribute('media');
-          }
-        }
-      });
-    };
-    const observer = new MutationObserver(mutationHandler);
-    observer.observe(document.head, {
-      subtree: true,
-      attributeFilter: ['media'],
-    });
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
-  useEffect(() => {
     form.setFieldsValue({
       Phone: dialCode.dialCode
     })
@@ -161,7 +136,7 @@ export default function Home() {
           <source src="movie.ogg" type="video/ogg" />
           Your browser does not support the video tag.
         </video>
-      </section>        
+      </section>
       <Midesection
         textOnRight={false}
         vedioSrc={"https://prod.protonncdn.com/demo/features/presence-in-5-minutes.mp4"}

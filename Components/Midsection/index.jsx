@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from "next/image";
-import styles from '../../styles/midSection.module.css'
+import styles from './midSection.module.css'
 
 
 const Midesection = ({ textOnRight, heading, paragraph, videoBgColor, vedioSrc }) => {

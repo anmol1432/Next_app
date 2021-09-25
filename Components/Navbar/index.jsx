@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from "next/link";
 import { CaretDownOutlined, CaretUpOutlined, MenuOutlined, CloseOutlined } from '@ant-design/icons';
 import { Menu, Dropdown } from 'antd';
-import styles from '../../styles/navbar.module.css'
+import styles from './navbar.module.css'
 
 const Navbar = () => {
     const router = useRouter()
